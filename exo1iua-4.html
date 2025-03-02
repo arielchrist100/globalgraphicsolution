@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+</head>
+<body>
+    <h2>Formulaire d'inscription</h2>
+    <form action="/submit" method="post">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="code">Code:</label>
+        <input type="text" id="code" name="code" required><br><br>
+
+        <label for="genre">Genre:</label>
+        <input type="radio" id="homme" name="genre" value="homme" required>
+        <label for="homme">Homme</label>
+        <input type="radio" id="femme" name="genre" value="femme" required>
+        <label for="femme">Femme</label><br><br>
+
+        <label for="pays">Pays:</label>
+        <select id="pays" name="pays" required>
+            <option value="france">Belgique</option>
+            <option value="belgique">france</option>
+            <option value="suisse">Suisse</option>
+            <option value="canada">Canada</option>
+            <option value="autre">Autre</option>
+        </select><br><br>
+
+        <input type="submit" value="Soumettre">
+    </form>
+</body>
+</html></form></html>

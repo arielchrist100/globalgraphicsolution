@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez notre imprimerie à Abidjan pour tous vos besoins en impression et conception graphique.">
+    <meta name="keywords" content="contact imprimerie Abidjan, impression numérique, impression offset, conception graphique">
+    <meta name="author" content="Nom de votre entreprise">
+    <title>Contactez-nous - Imprimerie à Abidjan</title>
+</head>
+<style>
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* En-tête */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Section des coordonnées */
+.contact-info {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Formulaire de contact */
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    color: #333;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    margin-top: 10px;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background: #555;
+}
+
+/* Pied de page */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+</style>
+<body>
+    <header>
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p>Nous sommes à votre disposition pour toute demande d'information ou de devis.</p>
+        </div>
+    </header>
+    
+    <section class="contact-info">
+        <div class="container">
+            <h2>Nos Coordonnées</h2>
+            <p><strong>Adresse :</strong> [Mythic Print, 8237+7HC, Marcory Potopoto, Abidjan]</p>
+            <p><strong>Téléphone :</strong> +225 01 41 54 48 80 </p>
+            <p><strong>Email :</strong> servicelouna30@gmail.com </p>
+            <p><strong>Horaires :</strong> Lundi - Vendredi : 08h00 - 18h00 | Samedi : 09h00 - 14h00</p>
+        </div>
+    </section>
+    
+    <section class="contact-form">
+        <div class="container">
+            <h2>Envoyez-nous un message</h2>
+            <form action="send_message.php" method="post">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [Nom de votre Imprimerie] - Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
