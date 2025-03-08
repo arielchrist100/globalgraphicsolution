@@ -3,6 +3,12 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin-top: auto;
+    background-image: url('AFFICHE5.png');
+    background-size: cover; /* Cela permet à l'image de couvrir toute la zone */
+    background-position: center; /* Pour centrer l'image */
+    background-repeat: no-repeat; /* Pour éviter que l'image se répète */
+    height: 10px; /* Pour que l'image couvre toute la hauteur de la fenêtre */
+    margin: 30; /* Enlève les marges par défaut */
 }
 
 .main-content {
@@ -53,3 +59,29 @@ body {
     display: inline-block;
     width: fit-content;
 }
+
+
+#whatsapp-button {
+    position: fixed; /* Le bouton reste fixé même lorsque l'utilisateur fait défiler la page */
+    bottom: 20px; /* Distance du bas de la page */
+    right: 20px; /* Distance du bord droit */
+    z-index: 1000; /* Assure que le bouton soit visible au-dessus d'autres éléments */
+    display: flex; /* Utilise flex pour centrer l'image dans le bouton */
+    align-items: center; /* Centre l'image verticalement */
+    justify-content: center; /* Centre l'image horizontalement */
+    width: 60px; /* Taille du bouton */
+    height: 60px; /* Taille du bouton */
+    background-color: #25D366; /* Couleur d'arrière-plan verte de WhatsApp */
+    border-radius: 50%; /* Forme circulaire */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    cursor: pointer; /* Le curseur devient une main pour indiquer qu'il est cliquable */
+    overflow: hidden; /* Empêche l'image de déborder du bouton circulaire */
+}
+
+
+#whatsapp-button img {
+    width: 40px; /* Taille de l'icône */
+    height: 40px; /* Taille de l'icône */
+    object-fit: cover; /* L'icône s'adapte sans déformation dans le cercle */
+}
+    

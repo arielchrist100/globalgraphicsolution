@@ -1,18 +1,75 @@
+/* Reset des marges et paddings pour une mise en page uniforme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin-top: auto;
+    background: linear-gradient(135deg, #6a4c9c, #3c4b8c); /* Arrière-plan violet et bleu */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    background-image: url('AFFICHE5.png');
+    background-size: cover; /* Cela permet à l'image de couvrir toute la zone */
+    background-position: center; /* Pour centrer l'image */
+    background-repeat: no-repeat; /* Pour éviter que l'image se répète */
+    height: 10px; /* Pour que l'image couvre toute la hauteur de la fenêtre */
+    margin: 30; /* Enlève les marges par défaut */
 }
 
-.main-content {
-    flex: 1;
+
+#whatsapp-button {
+    position: fixed; /* Le bouton reste fixé même lorsque l'utilisateur fait défiler la page */
+    bottom: 20px; /* Distance du bas de la page */
+    right: 20px; /* Distance du bord droit */
+    z-index: 1000; /* Assure que le bouton soit visible au-dessus d'autres éléments */
+    display: flex; /* Utilise flex pour centrer l'image dans le bouton */
+    align-items: center; /* Centre l'image verticalement */
+    justify-content: center; /* Centre l'image horizontalement */
+    width: 60px; /* Taille du bouton */
+    height: 60px; /* Taille du bouton */
+    background-color: #25D366; /* Couleur d'arrière-plan verte de WhatsApp */
+    border-radius: 50%; /* Forme circulaire */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    cursor: pointer; /* Le curseur devient une main pour indiquer qu'il est cliquable */
+    overflow: hidden; /* Empêche l'image de déborder du bouton circulaire */
 }
+
+#whatsapp-button img {
+    width: 40px; /* Taille de l'icône */
+    height: 40px; /* Taille de l'icône */
+    object-fit: cover; /* L'icône s'adapte sans déformation dans le cercle */
+}
+
+
+
+/* Style du header */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    background-color: #563c8f; /* Violet foncé */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Section des produits */
 .products {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
     gap: 20px;
     justify-content: center;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .products {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
 }
 
 .product-container {
@@ -23,11 +80,13 @@ body {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 320px; /* Réduire la largeur des conteneurs */
+    margin: 0 auto;
 }
 
 .product-card img {
-    width: 120px;
-    height: 120px;
+    width: 100px; /* Ajustement de la taille de l'image */
+    height: 100px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -42,6 +101,7 @@ body {
 .product-info h2 {
     margin: 0;
     font-size: 16px;
+    color: #333;
 }
 
 .price {
@@ -53,24 +113,38 @@ body {
     display: inline-block;
     width: fit-content;
 }
- /* Style du pied de page */
- .footer {
-    background: linear-gradient(135deg, #ff8c00, #ff3d00);
+
+/* Boutons */
+button {
+    background: #ff7a00; /* Couleur orange vif, proche de l'impression */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #e76f00; /* Couleur un peu plus foncée au survol */
+}
+
+/* Pied de page */
+.footer {
+    background: linear-gradient(135deg, #3c4b8c, #563c8f); /* Dégradé violet-bleu */
     color: white;
     text-align: center;
     padding: 40px 20px;
-}  
+    width: 100%;
+    margin-top: 30px;
+}
+
 .footer h2 {
     margin-bottom: 15px;
     font-size: 28px;
 }
 
-.footer {
-    width: 100%;
-    text-align: center;
-}
-
-/* Icônes réseaux sociaux */
 .social-icons {
     margin: 20px 0;
 }
@@ -81,6 +155,10 @@ body {
     color: white;
     font-size: 30px;
     text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ff9800; /* Changer la couleur au survol */
 }
 
 /* Mots-clés SEO */
@@ -96,4 +174,85 @@ body {
     margin: 0;
     padding: 5px 0;
     line-height: 1.6;
+}
+
+/* Responsivité pour les petits écrans */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .product-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .product-info p {
+        font-size: 0.9rem;
+    }
+
+    .price {
+        font-size: 1rem;
+    }
+
+    .footer h2 {
+        font-size: 24px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .social-icons a {
+        font-size: 25px;
+    }
+
+    .keywords {
+        font-size: 12px;
+    }
+}
+
+/* Responsivité pour les très petits écrans */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .product-card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .product-info h2 {
+        font-size: 1rem;
+    }
+
+    .product-info p {
+        font-size: 0.8rem;
+    }
+
+    .price {
+        font-size: 0.9rem;
+    }
+
+    .footer h2 {
+        font-size: 22px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
 }

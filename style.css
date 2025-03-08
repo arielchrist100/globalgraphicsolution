@@ -1,30 +1,69 @@
-    /* Style de l'en-tête */
+/* Style de l'en-tête */
+header {
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    color: var(--white);
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: space-between; /* Utilise space-between pour séparer le logo et les icônes */
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur du contenu principal */
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-align: left;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Le logo est aligné à gauche */
+}
+
+.logo img {
+    height: 50px; /* Ajuste la hauteur du logo */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end; /* Les icônes sont alignées à droite */
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
     header {
-        background: linear-gradient(90deg, var(--cyan), var(--magenta));
-        color: var(--white);
-        padding: 20px;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .header-content {
-        display: flex;
-        justify-content: space-between;
+        flex-direction: column; /* Les éléments sont empilés sur les petits écrans */
         align-items: center;
-        padding: 0 3rem;
+        text-align: center;
     }
 
-    header h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        text-align: left;
-    }
-    .logo img {
-        height: 60px; /* Ajustez la taille selon vos besoins */
-        /* Vous pouvez ajouter d'autres styles si nécessaire */
+    .logo {
+        margin-bottom: 10px;
     }
 
+    .social-icons {
+        justify-content: center; /* Centre les icônes */
+    }
+}
 
 :root {
     --cyan: #00AEEF;
@@ -33,59 +72,80 @@
     --black: #231F20;
     --white: #FFFFFF;
     --grey-light: #F4F4F4;
-    --grey-dark: #555;
+    --grey-dark: hsl(0, 0%, 33%);
 }
-        /* Création d'un motif répétitif de bandes horizontales :
-        - Une bande bleue (#3498db) sur 50px
-        - Une zone blanche (espace) sur 10px
-        - Une bande rouge (#e74c3c) sur 50px
-        - Une zone blanche sur 10px
-        - Une bande verte (#2ecc71) sur 50px
-        - Une zone blanche sur 10px
-        Le tout se répète sur une hauteur totale de 180px.
-        */
+
+#whatsapp-button {
+    position: fixed; /* Le bouton reste fixé même lorsque l'utilisateur fait défiler la page */
+    bottom: 20px; /* Distance du bas de la page */
+    right: 20px; /* Distance du bord droit */
+    z-index: 1000; /* Assure que le bouton soit visible au-dessus d'autres éléments */
+    display: flex; /* Utilise flex pour centrer l'image dans le bouton */
+    align-items: center; /* Centre l'image verticalement */
+    justify-content: center; /* Centre l'image horizontalement */
+    width: 60px; /* Taille du bouton */
+    height: 60px; /* Taille du bouton */
+    background-color: #25D366; /* Couleur d'arrière-plan verte de WhatsApp */
+    border-radius: 50%; /* Forme circulaire */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    cursor: pointer; /* Le curseur devient une main pour indiquer qu'il est cliquable */
+    overflow: hidden; /* Empêche l'image de déborder du bouton circulaire */
+}
 
 
-    /* Style du logo */
-    .container{
-        font-size: 24px;
-        font-weight: bold;
-        color: white;
-        margin-right: 20px;
+#whatsapp-button img {
+    width: 40px; /* Taille de l'icône */
+    height: 40px; /* Taille de l'icône */
+    object-fit: cover; /* L'icône s'adapte sans déformation dans le cercle */
+}
 
-    }
-    header .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 3rem;
+
+
+
+/* Style pour la section Contact Info */
+.contact-info {
+    background-color: #1f68c2;  /* Couleur de fond */
+    padding: 20px;  /* Espacement autour du contenu */
+    margin-top: -1px;  /* Pour coller au header (si nécessaire) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optionnel, ajout d'une légère ombre */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;  /* Espacement entre les items */
+}
+
+.contact-item img {
+    width: 24px;  /* Ajuste la taille des icônes */
+    height: 24px;
+    margin-right: 10px;  /* Espacement entre l'icône et le texte */
+}
+
+.contact-item span {
+    font-size: 16px;  /* Taille du texte */
+    color: black;  /* Couleur du texte */
+    text-decoration: none;
+}
+
+/* Pour rendre la section responsive */
+@media (max-width: 768px) {
+    .contact-item {
+        flex-direction: column;  /* Met les icônes et le texte en colonne sur petits écrans */
+        align-items: flex-start;
     }
 
-    header nav ul {
-        list-style: none;
-        display: flex;
-        gap: 2rem; /* Espace modéré entre les liens */
-        margin: 0;
-        padding: 0;
+    .contact-item img {
+        margin-right: 0;
+        margin-bottom: 5px;  /* Espacement pour les icônes sur petits écrans */
     }
-    
-    header nav ul li {
-    position: relative;
-    }
-    header nav ul li a {
-        color: #fff;
-        text-decoration: none; /* Pas de soulignement */
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    
-    header nav ul li a:hover {
-        background-color: rgba(241, 196, 15, 0.2); /* Fond léger au survol */
-        border-radius: 4px;
-        color: #f1c40f;
-    }
+}
+
+.menu-icon{
+    background-color: #00AEEF;
+}
+
+
     .container img {
         height: 60px;
         margin-right: 10px;
@@ -153,19 +213,6 @@
         margin: 10px auto;
     }
 
-
-
-
-    
-    #background-video {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
     
     .content {
         position: relative;
@@ -212,30 +259,7 @@
 
     /* Style du texte personnalisé 
 
-    /* Section Hero */
-    #hero {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        text-align: left; /* Aligne le texte à gauche */
-        background: repeating-linear-gradient(
-            to right, /* orientation verticale */
-            #3498db 0px,
-            #3498db 50px,
-            #3498db 50px,
-            #3498db 60px,
-            #3498db 60px,
-            #3498db 110px,
-            #3498db 110px,
-            #3498db 120px,
-            #3498db 120px,
-            #3498db 170px,
-            #fff 170px,
-            #fff 180px
-            );
-            background-size: 180px 100%;
-            padding: 20px; /* Pour un peu d'espace intérieur */
-    }
+
     
 
     /* PARTIE SERVICES DEBUT BODY */
@@ -316,16 +340,6 @@ footer {
 
 
 
-
-    
-    
-    /* Style de la vidéo */
-    .video-container video {
-        width: 50%; /* Définit la largeur de la vidéo */
-        height: auto; /* La hauteur s'ajuste automatiquement en fonction de la largeur */
-        border-radius: 8px; /* Coins arrondis pour la vidéo */
-    
-    }
 
 
     /* Style des groupes d'input */
